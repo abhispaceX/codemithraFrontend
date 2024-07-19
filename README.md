@@ -58,7 +58,7 @@ To install the project, follow these steps:
 └── package.json
 ```
 ## Screenshots
-![Login](/client/public/Expences.png)
+![DashBoard](./public/Expences.png)
 
 
 
