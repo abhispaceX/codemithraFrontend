@@ -6,7 +6,7 @@ export const fetchSummary = createAsyncThunk(
   async ({ startDate, endDate, period }, { rejectWithValue }) => {
     try {
       console.log('Fetching summary for:', startDate, 'to', endDate, 'period:', period);
-      const response = await axios.get(`https://ethnusbackend-fuxl.onrender.com`, {
+      const response = await axios.get(`https://ethnusbackend-fuxl.onrender.com/api/summary`, {
         params: {
           startDate: startDate.toISOString(),
           endDate: endDate.toISOString(),

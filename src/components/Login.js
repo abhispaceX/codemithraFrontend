@@ -23,7 +23,7 @@ const Login = () => {
     setGeneralError('');
 
     try {
-      const response = await axios.post('https://ethnusbackend-fuxl.onrender.com', data, {
+      const response = await axios.post('https://ethnusbackend-fuxl.onrender.com/api/auth/login', data, {
         headers: {
           'Content-Type': 'application/json'
         }
