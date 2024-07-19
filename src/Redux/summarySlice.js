@@ -1,16 +1,16 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-
 export const fetchSummary = createAsyncThunk(
   'summary/fetchSummary',
-  async ({ startDate, endDate }, { rejectWithValue }) => {
+  async ({ startDate, endDate, period }, { rejectWithValue }) => {
     try {
-      console.log('Fetching summary for:', startDate, 'to', endDate);
+      console.log('Fetching summary for:', startDate, 'to', endDate, 'period:', period);
       const response = await axios.get(`http://localhost:3001/api/summary`, {
         params: {
           startDate: startDate.toISOString(),
-          endDate: endDate.toISOString()
+          endDate: endDate.toISOString(),
+          period
         }
       });
       console.log('Raw API response:', response.data);
@@ -21,11 +21,13 @@ export const fetchSummary = createAsyncThunk(
     }
   }
 );
+
 const summarySlice = createSlice({
   name: 'summary',
   initialState: {
     totalSpending: 0,
     spendingByCategory: {},
+    spendingByPeriod: {},
     loading: false,
     error: null,
   },
@@ -41,6 +43,7 @@ const summarySlice = createSlice({
         state.loading = false;
         state.totalSpending = action.payload.totalSpending || 0;
         state.spendingByCategory = action.payload.spendingByCategory || {};
+        state.spendingByPeriod = action.payload.spendingByPeriod || {};
       })
       .addCase(fetchSummary.rejected, (state, action) => {
         state.loading = false;

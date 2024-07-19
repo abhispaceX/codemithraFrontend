@@ -18,9 +18,10 @@ export const fetchExpenses = createAsyncThunk(
 
 export const addExpense = createAsyncThunk(
   'expenses/addExpense',
-  async (expense, { rejectWithValue }) => {
+  async (expense, { dispatch, rejectWithValue }) => {
     try {
       const response = await axios.post(API_URL, expense);
+      dispatch(expenseAdded(response.data)); // Update local state
       return response.data;
     } catch (error) {
       console.error('Error adding expense:', error.response?.data || error.message);
@@ -54,7 +55,11 @@ const expenseSlice = createSlice({
     loading: false,
     error: null,
   },
-  reducers: {},
+  reducers: {
+    expenseAdded: (state, action) => {
+      state.items.push(action.payload);
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchExpenses.pending, (state) => {
@@ -69,7 +74,8 @@ const expenseSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(addExpense.fulfilled, (state, action) => {
-        state.items.push(action.payload);
+        // This case is now redundant as we're using the expenseAdded reducer
+        // but we'll keep it for consistency
       })
       .addCase(updateExpense.fulfilled, (state, action) => {
         state.items = state.items.map((item) =>
@@ -82,4 +88,5 @@ const expenseSlice = createSlice({
   },
 });
 
+export const { expenseAdded } = expenseSlice.actions;
 export default expenseSlice.reducer;
