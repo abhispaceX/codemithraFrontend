@@ -31,7 +31,7 @@ const Signup = () => {
         e.preventDefault();
         
         try {
-            const response = await axios.post('http://localhost:3001/signup', data, {
+            const response = await axios.post('https://ethnusbackend-fuxl.onrender.com', data, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

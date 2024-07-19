@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/api/expenses';
+const API_URL = 'https://ethnusbackend-fuxl.onrender.com';
 
 export const fetchExpenses = createAsyncThunk(
   'expenses/fetchExpenses',

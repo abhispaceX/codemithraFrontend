@@ -23,7 +23,7 @@ const Login = () => {
     setGeneralError('');
 
     try {
-      const response = await axios.post('http://localhost:3001/login', data, {
+      const response = await axios.post('https://ethnusbackend-fuxl.onrender.com', data, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -67,7 +67,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container flex flex-col justify-center items-center  bg-[url('https://cdn4.vectorstock.com/i/1000x1000/23/98/budget-tracking-set-smartphone-background-vector-35182398.jpg')] bg-cover h-screen">
+    <div className="container flex flex-col justify-center items-center  backdrop-blur-lg bg-[url('https://cdn4.vectorstock.com/i/1000x1000/23/98/budget-tracking-set-smartphone-background-vector-35182398.jpg')] bg-cover h-screen">
       <form className="bg-white shadow-md rounded px-8 pt-6 pb-8  mb-2 w-3/12" onSubmit={handleSubmit}>
         <h2 className="text-2xl text-center font-bold mb-4">Login</h2>
         <div className="mb-4">
