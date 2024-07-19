@@ -1,6 +1,68 @@
-# Getting Started with Create React App
+# Personal Expense Tracker 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Table of Contents
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Installation](#installation)
+* [Folder Structure](#folder)
+* [Screenshots](#screenshots)
+
+
+## General Info
+The Personal Expense Tracker application helps users to track their expenses, categorize them, and view summaries of their spending habits. This repository contains the client-side code for the application, which is built using React and Redux.
+
+## Technologies Used
+* React
+* Redux
+* React Router
+* React-Bootstrap
+* Tailwind css
+* React-Icons
+* React-Datepicker
+
+
+## Features
+- **User Management**: Users can sign up, log in, and manage their sessions.
+- **Expense Management**: Users can add, view, edit, and delete expense entries.
+- **Category Management**: Users can categorize their expenses and create custom categories.
+- **Summary and Insights**: Users can view a summary of their spending, categorized by time period and category.
+
+## Installation 
+To install the project, follow these steps:
+1. Clone the repository to your local machine.
+2. Navigate to the project directory in your terminal.
+3. Run `npm install` to install the required dependencies.
+4. Run `npm start` to start the development server.
+5. Open http://localhost:3000 in your browser to view the application.
+6. Enjoy!
+
+## Folder Structure
+```bash
+├── public
+├── src
+│   ├── components
+│   │   ├── Dashboard.js
+│   │   ├── ExpenseForm.js
+│   │   ├── ExpenseList.js
+│   │   ├── Login.js
+│   │   ├── Signup.js
+│   │   ├── Summary.js
+│   ├── Redux
+│   │   ├── authSlice.js
+│   │   ├── expenseSlice.js
+│   │   ├── store.js
+│   │   ├── summarySlice.js
+│   ├── App.js
+│   ├── index.js
+└── package.json
+```
+## Screenshots
+![Login](/Expences.png)
+
+
+
+
 
 ## Available Scripts
 
@@ -29,21 +91,14 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies Used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+React
+Redux
+React Router
+Tailwind CSS
 
 ### Code Splitting
 
