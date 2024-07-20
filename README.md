@@ -58,7 +58,7 @@ To install the project, follow these steps:
 └── package.json
 ```
 ## Screenshots
-![DashBoard](./public/Expences.png)
+![Login](/Users/abhi/Superset/client/public/Expences.png)
 
 
 
