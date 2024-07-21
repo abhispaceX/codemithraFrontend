@@ -72,7 +72,7 @@ const ExpenseList = () => {
                   {new Date(expense.date).toLocaleDateString()}
                 </td>
                 <td className="py-3 px-6 text-left">{expense.category}</td>
-                <td className="py-3 px-6 text-left">${expense.amount.toFixed(2)}</td>
+                <td className="py-3 px-6 text-left">₹{expense.amount.toFixed(2)}</td>
                 <td className="py-3 px-6 text-left">
                   <button
                     onClick={() => handleEdit(expense)}

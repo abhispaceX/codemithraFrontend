@@ -68,7 +68,7 @@ const Summary = () => {
           <option value="monthly">Monthly</option>
         </select>
       </div>
-      <p className="text-xl mb-4">Total Spending: <span className="font-bold text-secondary">${totalSpending.toFixed(2)}</span></p>
+      <p className="text-xl mb-4">Total Spending: <span className="font-bold text-secondary">₹{totalSpending.toFixed(2)}</span></p>
       
       <h3 className="text-xl mb-2">Spending by Category</h3>
       {chartData.length > 0 ? (
